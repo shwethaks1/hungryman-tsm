@@ -9,7 +9,7 @@ metadata:
   labels:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-api-gateway
-    apps.tanzu.vmware.com/has-tests: true
+    apps.tanzu.vmware.com/has-tests: "true"
 spec:
   build:
     env:
@@ -37,7 +37,7 @@ metadata:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-search
     networking.knative.dev/visibility: cluster-local
-    apps.tanzu.vmware.com/has-tests: true
+    apps.tanzu.vmware.com/has-tests: "true"
 spec:
   build:
     env:
@@ -71,7 +71,7 @@ metadata:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-search-proc
     networking.knative.dev/visibility: cluster-local
-    apps.tanzu.vmware.com/has-tests: true
+    apps.tanzu.vmware.com/has-tests: "true"
 spec:
   build:
     env:
@@ -108,7 +108,7 @@ metadata:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-notify
     networking.knative.dev/visibility: cluster-local
-    apps.tanzu.vmware.com/has-tests: true
+    apps.tanzu.vmware.com/has-tests: "true"
 spec:
   build:
     env:
@@ -142,7 +142,7 @@ metadata:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-availability
     networking.knative.dev/visibility: cluster-local
-    apps.tanzu.vmware.com/has-tests: true
+    apps.tanzu.vmware.com/has-tests: "true"
 spec:
   build:
     env:
@@ -176,7 +176,7 @@ metadata:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-ui
     networking.knative.dev/visibility: cluster-local
-    apps.tanzu.vmware.com/has-tests: true
+    apps.tanzu.vmware.com/has-tests: "true"
 spec:
   build:
     env:
@@ -206,7 +206,7 @@ metadata:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-crawler
     networking.knative.dev/visibility: cluster-local
-    apps.tanzu.vmware.com/has-tests: true
+    apps.tanzu.vmware.com/has-tests: "true"
 spec:
   build:
     env:
