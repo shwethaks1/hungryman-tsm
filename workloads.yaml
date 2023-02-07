@@ -9,17 +9,18 @@ metadata:
   labels:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-api-gateway
+    apps.tanzu.vmware.com/has-tests: true
 spec:
+  build:
+    env:
+      - name: BP_JVM_VERSION
+        value: "17"  
   params:
   - name: ports
     value:
     - port: 80
       containerPort: 8080
       name: http
-  build:
-    env:
-      - name: BP_JVM_VERSION
-        value: "17" 
   source:
     git:
       url: https://github.com/gm2552/hungryman.git
@@ -36,17 +37,18 @@ metadata:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-search
     networking.knative.dev/visibility: cluster-local
+    apps.tanzu.vmware.com/has-tests: true
 spec:
+  build:
+    env:
+      - name: BP_JVM_VERSION
+        value: "17"  
   params:
   - name: ports
     value:
     - port: 80
       containerPort: 8080
       name: http
-  build:
-    env:
-      - name: BP_JVM_VERSION
-        value: "17" 
   serviceClaims:
   - name: rmq
     ref:
@@ -69,7 +71,12 @@ metadata:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-search-proc
     networking.knative.dev/visibility: cluster-local
+    apps.tanzu.vmware.com/has-tests: true
 spec:
+  build:
+    env:
+      - name: BP_JVM_VERSION
+        value: "17"  
   env: 
   - name: spring_profiles_active
     value: crawler
@@ -79,10 +86,6 @@ spec:
     - port: 80
       containerPort: 8080
       name: http
-  build:
-    env:
-      - name: BP_JVM_VERSION
-        value: "17" 
   serviceClaims:
   - name: rmq
     ref:
@@ -105,17 +108,18 @@ metadata:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-notify
     networking.knative.dev/visibility: cluster-local
+    apps.tanzu.vmware.com/has-tests: true
 spec:
+  build:
+    env:
+      - name: BP_JVM_VERSION
+        value: "17"  
   params:
   - name: ports
     value:
     - port: 80
       containerPort: 8080
       name: http
-  build:
-    env:
-      - name: BP_JVM_VERSION
-        value: "17" 
   serviceClaims:
   - name: rmq
     ref:
@@ -138,17 +142,18 @@ metadata:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-availability
     networking.knative.dev/visibility: cluster-local
+    apps.tanzu.vmware.com/has-tests: true
 spec:
+  build:
+    env:
+      - name: BP_JVM_VERSION
+        value: "17"  
   params:
   - name: ports
     value:
     - port: 80
       containerPort: 8080
       name: http
-  build:
-    env:
-      - name: BP_JVM_VERSION
-        value: "17" 
   serviceClaims:
   - name: rmq
     ref:
@@ -171,17 +176,20 @@ metadata:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-ui
     networking.knative.dev/visibility: cluster-local
+    apps.tanzu.vmware.com/has-tests: true
 spec:
+  build:
+    env:
+    - name: BP_NODE_RUN_SCRIPTS
+      value: build
+    - name: BP_WEB_SERVER_ROOT
+      value: dist
   params:
   - name: ports
     value:
     - port: 80
-      containerPort: 3000
+      containerPort: 8080
       name: http
-  build:
-    env:
-      - name: BP_JVM_VERSION
-        value: "17" 
   source:
     git:
       url: https://github.com/gm2552/hungryman.git
@@ -198,17 +206,18 @@ metadata:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: hungryman-crawler
     networking.knative.dev/visibility: cluster-local
+    apps.tanzu.vmware.com/has-tests: true
 spec:
+  build:
+    env:
+      - name: BP_JVM_VERSION
+        value: "17"  
   params:
   - name: ports
     value:
     - port: 80
       containerPort: 8080
       name: http
-  build:
-    env:
-      - name: BP_JVM_VERSION
-        value: "17" 
   source:
     git:
       url: https://github.com/gm2552/hungryman.git
